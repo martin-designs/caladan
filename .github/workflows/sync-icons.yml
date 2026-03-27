@@ -29,6 +29,7 @@ jobs:
         env:
           FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
           FIGMA_FILE_KEY: oWyNqsZJKJYF8SpZsBPb9P
+          FIGMA_ICONS_NODE_ID: "106:728"
 
       - name: Optimize SVGs
         run: npm run optimize-icons

@@ -4,6 +4,7 @@ const path = require('path');
 
 const FIGMA_TOKEN = process.env.FIGMA_TOKEN;
 const FIGMA_FILE_KEY = process.env.FIGMA_FILE_KEY;
+const FIGMA_ICONS_NODE_ID = process.env.FIGMA_ICONS_NODE_ID;
 const OUTPUT_DIR = path.join(__dirname, '..', 'icons', 'svg');
 
 // Fetch JSON from a URL
@@ -45,30 +46,74 @@ function parseName(componentName) {
   return { category: 'Other', name: parts[parts.length - 1].trim() };
 }
 
+// Check if a node ID falls within the icons frame
+// Figma node IDs are in the format "106:728" — we fetch the icons frame's
+// children and only export components whose node_id is in that list
+async function getNodeIdsInFrame(frameNodeId) {
+  // Normalize node ID format (replace - with :)
+  const normalizedId = frameNodeId.replace('-', ':');
+  console.log(`Fetching children of icons frame (node ${normalizedId})...`);
+
+  const data = await fetch(
+    `https://api.figma.com/v1/files/${FIGMA_FILE_KEY}/nodes?ids=${normalizedId}`,
+    { 'X-Figma-Token': FIGMA_TOKEN }
+  );
+
+  const node = data.nodes?.[normalizedId];
+  if (!node) {
+    throw new Error(`Could not find node ${normalizedId} in file`);
+  }
+
+  // Recursively collect all node IDs within this frame
+  const ids = new Set();
+  function collect(n) {
+    ids.add(n.document.id);
+    for (const child of n.document.children || []) {
+      collectNode(child);
+    }
+  }
+  function collectNode(n) {
+    ids.add(n.id);
+    for (const child of n.children || []) {
+      collectNode(child);
+    }
+  }
+  collect(node);
+  return ids;
+}
+
 async function main() {
-  console.log('Fetching file structure from Figma...');
+  // Step 1 — get all node IDs within the icons frame
+  const frameNodeIds = await getNodeIdsInFrame(FIGMA_ICONS_NODE_ID);
+  console.log(`Found ${frameNodeIds.size} nodes inside icons frame`);
+
+  // Step 2 — fetch all components in the file
+  console.log('Fetching components from Figma...');
   const file = await fetch(
     `https://api.figma.com/v1/files/${FIGMA_FILE_KEY}/components`,
     { 'X-Figma-Token': FIGMA_TOKEN }
   );
 
-  const components = file.meta?.components || [];
-  console.log(`Found ${components.length} components`);
+  const allComponents = file.meta?.components || [];
+  console.log(`Total components in file: ${allComponents.length}`);
 
-  // Group by category
-  const byCategory = {};
-  for (const component of components) {
-    const { category, name } = parseName(component.name);
-    if (!byCategory[category]) byCategory[category] = [];
-    byCategory[category].push({ ...component, iconName: name });
+  // Step 3 — filter to only components inside the icons frame
+  const components = allComponents.filter((c) =>
+    frameNodeIds.has(c.node_id)
+  );
+  console.log(`Components inside icons frame: ${components.length}`);
+
+  if (components.length === 0) {
+    console.log('No components found inside the icons frame. Check FIGMA_ICONS_NODE_ID.');
+    process.exit(1);
   }
 
   // Print categories found
-  console.log('Categories:', Object.keys(byCategory).join(', '));
+  const categories = [...new Set(components.map((c) => parseName(c.name).category))];
+  console.log('Categories:', categories.join(', '));
 
-  // Get node IDs for all components
+  // Step 4 — request SVG export URLs
   const nodeIds = components.map((c) => c.node_id).join(',');
-
   console.log('Requesting SVG export URLs from Figma...');
   const images = await fetch(
     `https://api.figma.com/v1/images/${FIGMA_FILE_KEY}?ids=${nodeIds}&format=svg`,
@@ -77,7 +122,7 @@ async function main() {
 
   const urls = images.images || {};
 
-  // Download each SVG
+  // Step 5 — download each SVG
   let downloaded = 0;
   for (const component of components) {
     const { category, name: iconName } = parseName(component.name);
