@@ -1,0 +1,12 @@
+import * as React from 'react';
+import Svg, { Path, G, ClipPath, Rect, Circle, Defs } from 'react-native-svg';
+interface Props {
+  size?: number;
+  color?: string;
+}
+const XFill = ({
+  size = 24,
+  color = '#000000',
+  ...props
+}: Props) => <Svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" {...props}><G clipPath="url(#a)"><Path fill="{color}" d="M19.753 4.659a1 1 0 0 0-1.506-1.317l-5.11 5.84L8.8 3.4A1 1 0 0 0 8 3H4a1 1 0 0 0-.8 1.6l6.437 8.582-5.39 6.16a1 1 0 1 0 1.506 1.317l5.11-5.841L15.2 20.6a1 1 0 0 0 .8.4h4a1 1 0 0 0 .8-1.6l-6.437-8.582z" /></G><Defs><ClipPath id="a"><Path fill="{color}" d="M0 0h24v24H0z" /></ClipPath></Defs></Svg>;
+export default XFill;

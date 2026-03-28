@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "optimize-icons": "svgo --config svgo.config.js -rf icons/svg",
-    "build-react-icons": "node scripts/build-react-icons.js"
+    "build-react-icons": "node scripts/build-react-icons.js",
+    "build-react-native-icons": "node scripts/build-react-native-icons.js"
   },
   "repository": {
     "type": "git",

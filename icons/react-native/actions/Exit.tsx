@@ -1,0 +1,12 @@
+import * as React from 'react';
+import Svg, { Path, G, ClipPath, Rect, Circle, Defs } from 'react-native-svg';
+interface Props {
+  size?: number;
+  color?: string;
+}
+const Exit = ({
+  size = 24,
+  color = '#000000',
+  ...props
+}: Props) => <Svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} fill="none" {...props}><G clipPath="url(#a)"><Path fill="{color}" d="M12 3a1 1 0 0 1 .117 1.993L12 5H7a1 1 0 0 0-.993.883L6 6v12a1 1 0 0 0 .883.993L7 19h4.5a1 1 0 0 1 .117 1.993L11.5 21H7a3 3 0 0 1-2.995-2.824L4 18V6a3 3 0 0 1 2.824-2.995L7 3zm5.707 5.464 2.828 2.829a1 1 0 0 1 0 1.414l-2.828 2.829a1 1 0 1 1-1.414-1.415L17.414 13H12a1 1 0 0 1 0-2h5.414l-1.121-1.121a1 1 0 0 1 1.414-1.415" /></G><Defs><ClipPath id="a"><Path fill="{color}" d="M0 0h24v24H0z" /></ClipPath></Defs></Svg>;
+export default Exit;
