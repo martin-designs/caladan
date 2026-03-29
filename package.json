@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "export-color-tokens": "node scripts/export-color-tokens.js",
+    "export-spacing-tokens": "node scripts/export-spacing-tokens.js",
     "optimize-icons": "svgo --config svgo.config.js -rf icons/svg",
     "build-react-icons": "node scripts/build-react-icons.js",
     "build-react-native-icons": "node scripts/build-react-native-icons.js"

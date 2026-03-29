@@ -1,0 +1,358 @@
+{
+  "$metadata": {
+    "version": "1.0.0",
+    "generated_at": "2026-03-29T11:11:38.698Z",
+    "source": "Figma · Spacing - Alias · VariableCollectionId:426:2159",
+    "figma_file": "oWyNqsZJKJYF8SpZsBPb9P"
+  },
+  "$type": "dimension",
+  "border-width": {
+    "none": {
+      "$value": "{0}",
+      "$description": "No border — 0px",
+      "$extensions": { "caladan": { "figma-variable": "border-width/none" } }
+    },
+    "small": {
+      "$value": "{1}",
+      "$description": "Thin border — 1px",
+      "$extensions": { "caladan": { "figma-variable": "border-width/small" } }
+    },
+    "medium": {
+      "$value": "{2}",
+      "$description": "Medium border — 2px",
+      "$extensions": { "caladan": { "figma-variable": "border-width/medium" } }
+    },
+    "large": {
+      "$value": "{4}",
+      "$description": "Thick border — 4px",
+      "$extensions": { "caladan": { "figma-variable": "border-width/large" } }
+    },
+    "x-large": {
+      "$value": "{8}",
+      "$description": "Extra thick border — 8px",
+      "$extensions": { "caladan": { "figma-variable": "border-width/x-large" } }
+    }
+  },
+  "radius": {
+    "none": {
+      "$value": "{0}",
+      "$description": "No border radius — 0px",
+      "$extensions": { "caladan": { "figma-variable": "radius/none" } }
+    },
+    "x-small": {
+      "$value": "{2}",
+      "$description": "Extra small radius — 2px",
+      "$extensions": { "caladan": { "figma-variable": "radius/x-small" } }
+    },
+    "small": {
+      "$value": "{4}",
+      "$description": "Small radius — 4px",
+      "$extensions": { "caladan": { "figma-variable": "radius/small" } }
+    },
+    "medium": {
+      "$value": "{8}",
+      "$description": "Medium radius — 8px",
+      "$extensions": { "caladan": { "figma-variable": "radius/medium" } }
+    },
+    "large": {
+      "$value": "{12}",
+      "$description": "Large radius — 12px",
+      "$extensions": { "caladan": { "figma-variable": "radius/large" } }
+    },
+    "x-large": {
+      "$value": "{16}",
+      "$description": "Extra large radius — 16px",
+      "$extensions": { "caladan": { "figma-variable": "radius/x-large" } }
+    },
+    "2x-large": {
+      "$value": "{24}",
+      "$description": "2x large radius — 24px",
+      "$extensions": { "caladan": { "figma-variable": "radius/2x-large" } }
+    },
+    "3x-large": {
+      "$value": "{32}",
+      "$description": "3x large radius — 32px",
+      "$extensions": { "caladan": { "figma-variable": "radius/3x-large" } }
+    },
+    "full": {
+      "$value": "{384}",
+      "$description": "Full/pill radius — 384px",
+      "$extensions": { "caladan": { "figma-variable": "radius/full" } }
+    }
+  },
+  "gap": {
+    "0": {
+      "$value": "{0}",
+      "$description": "Gap of 0px between flex/grid items — Tailwind gap-0",
+      "$extensions": { "caladan": { "figma-variable": "gap/0" } }
+    },
+    "2": {
+      "$value": "{2}",
+      "$description": "Gap of 2px between flex/grid items — Tailwind gap-0.5",
+      "$extensions": { "caladan": { "figma-variable": "gap/2" } }
+    },
+    "4": {
+      "$value": "{4}",
+      "$description": "Gap of 4px between flex/grid items — Tailwind gap-1",
+      "$extensions": { "caladan": { "figma-variable": "gap/4" } }
+    },
+    "8": {
+      "$value": "{8}",
+      "$description": "Gap of 8px between flex/grid items — Tailwind gap-2",
+      "$extensions": { "caladan": { "figma-variable": "gap/8" } }
+    },
+    "12": {
+      "$value": "{12}",
+      "$description": "Gap of 12px between flex/grid items — Tailwind gap-3",
+      "$extensions": { "caladan": { "figma-variable": "gap/12" } }
+    },
+    "16": {
+      "$value": "{16}",
+      "$description": "Gap of 16px between flex/grid items — Tailwind gap-4",
+      "$extensions": { "caladan": { "figma-variable": "gap/16" } }
+    },
+    "24": {
+      "$value": "{24}",
+      "$description": "Gap of 24px between flex/grid items — Tailwind gap-6",
+      "$extensions": { "caladan": { "figma-variable": "gap/24" } }
+    },
+    "32": {
+      "$value": "{32}",
+      "$description": "Gap of 32px between flex/grid items — Tailwind gap-8",
+      "$extensions": { "caladan": { "figma-variable": "gap/32" } }
+    },
+    "40": {
+      "$value": "{40}",
+      "$description": "Gap of 40px between flex/grid items — Tailwind gap-10",
+      "$extensions": { "caladan": { "figma-variable": "gap/40" } }
+    },
+    "48": {
+      "$value": "{48}",
+      "$description": "Gap of 48px between flex/grid items — Tailwind gap-12",
+      "$extensions": { "caladan": { "figma-variable": "gap/48" } }
+    },
+    "56": {
+      "$value": "{56}",
+      "$description": "Gap of 56px between flex/grid items — Tailwind gap-14",
+      "$extensions": { "caladan": { "figma-variable": "gap/56" } }
+    },
+    "64": {
+      "$value": "{64}",
+      "$description": "Gap of 64px between flex/grid items — Tailwind gap-16",
+      "$extensions": { "caladan": { "figma-variable": "gap/64" } }
+    },
+    "80": {
+      "$value": "{80}",
+      "$description": "Gap of 80px between flex/grid items — Tailwind gap-20",
+      "$extensions": { "caladan": { "figma-variable": "gap/80" } }
+    },
+    "96": {
+      "$value": "{96}",
+      "$description": "Gap of 96px between flex/grid items — Tailwind gap-24",
+      "$extensions": { "caladan": { "figma-variable": "gap/96" } }
+    }
+  },
+  "padding": {
+    "0": {
+      "$value": "{0}",
+      "$description": "Padding of 0px — Tailwind p-0",
+      "$extensions": { "caladan": { "figma-variable": "padding/0" } }
+    },
+    "2": {
+      "$value": "{2}",
+      "$description": "Padding of 2px — Tailwind p-0.5",
+      "$extensions": { "caladan": { "figma-variable": "padding/2" } }
+    },
+    "4": {
+      "$value": "{4}",
+      "$description": "Padding of 4px — Tailwind p-1",
+      "$extensions": { "caladan": { "figma-variable": "padding/4" } }
+    },
+    "8": {
+      "$value": "{8}",
+      "$description": "Padding of 8px — Tailwind p-2",
+      "$extensions": { "caladan": { "figma-variable": "padding/8" } }
+    },
+    "12": {
+      "$value": "{12}",
+      "$description": "Padding of 12px — Tailwind p-3",
+      "$extensions": { "caladan": { "figma-variable": "padding/12" } }
+    },
+    "16": {
+      "$value": "{16}",
+      "$description": "Padding of 16px — Tailwind p-4",
+      "$extensions": { "caladan": { "figma-variable": "padding/16" } }
+    },
+    "24": {
+      "$value": "{24}",
+      "$description": "Padding of 24px — Tailwind p-6",
+      "$extensions": { "caladan": { "figma-variable": "padding/24" } }
+    },
+    "32": {
+      "$value": "{32}",
+      "$description": "Padding of 32px — Tailwind p-8",
+      "$extensions": { "caladan": { "figma-variable": "padding/32" } }
+    },
+    "40": {
+      "$value": "{40}",
+      "$description": "Padding of 40px — Tailwind p-10",
+      "$extensions": { "caladan": { "figma-variable": "padding/40" } }
+    },
+    "48": {
+      "$value": "{48}",
+      "$description": "Padding of 48px — Tailwind p-12",
+      "$extensions": { "caladan": { "figma-variable": "padding/48" } }
+    },
+    "64": {
+      "$value": "{64}",
+      "$description": "Padding of 64px — Tailwind p-16",
+      "$extensions": { "caladan": { "figma-variable": "padding/64" } }
+    },
+    "80": {
+      "$value": "{80}",
+      "$description": "Padding of 80px — Tailwind p-20",
+      "$extensions": { "caladan": { "figma-variable": "padding/80" } }
+    },
+    "96": {
+      "$value": "{96}",
+      "$description": "Padding of 96px — Tailwind p-24",
+      "$extensions": { "caladan": { "figma-variable": "padding/96" } }
+    },
+    "128": {
+      "$value": "{128}",
+      "$description": "Padding of 128px — Tailwind p-32",
+      "$extensions": { "caladan": { "figma-variable": "padding/128" } }
+    },
+    "160": {
+      "$value": "{160}",
+      "$description": "Padding of 160px — Tailwind p-40",
+      "$extensions": { "caladan": { "figma-variable": "padding/160" } }
+    },
+    "192": {
+      "$value": "{192}",
+      "$description": "Padding of 192px — Tailwind p-48",
+      "$extensions": { "caladan": { "figma-variable": "padding/192" } }
+    },
+    "224": {
+      "$value": "{224}",
+      "$description": "Padding of 224px — Tailwind p-56",
+      "$extensions": { "caladan": { "figma-variable": "padding/224" } }
+    },
+    "256": {
+      "$value": "{256}",
+      "$description": "Padding of 256px — Tailwind p-64",
+      "$extensions": { "caladan": { "figma-variable": "padding/256" } }
+    },
+    "288": {
+      "$value": "{288}",
+      "$description": "Padding of 288px — Tailwind p-72",
+      "$extensions": { "caladan": { "figma-variable": "padding/288" } }
+    },
+    "320": {
+      "$value": "{320}",
+      "$description": "Padding of 320px — Tailwind p-80",
+      "$extensions": { "caladan": { "figma-variable": "padding/320" } }
+    }
+  },
+  "icon-size": {
+    "x-small": {
+      "$value": "{16}",
+      "$description": "Extra small icon — 16px",
+      "$extensions": { "caladan": { "figma-variable": "icon-size/x-small" } }
+    },
+    "small": {
+      "$value": "{20}",
+      "$description": "Small icon — 20px",
+      "$extensions": { "caladan": { "figma-variable": "icon-size/small" } }
+    },
+    "default": {
+      "$value": "{24}",
+      "$description": "Default icon size — 24px",
+      "$extensions": { "caladan": { "figma-variable": "icon-size/default" } }
+    },
+    "large": {
+      "$value": "{32}",
+      "$description": "Large icon — 32px",
+      "$extensions": { "caladan": { "figma-variable": "icon-size/large" } }
+    },
+    "x-large": {
+      "$value": "{40}",
+      "$description": "Extra large icon — 40px",
+      "$extensions": { "caladan": { "figma-variable": "icon-size/x-large" } }
+    }
+  },
+  "size": {
+    "2x-small": {
+      "$value": "{16}",
+      "$description": "Extra extra small size — 16px",
+      "$extensions": { "caladan": { "figma-variable": "size/2x-small" } }
+    },
+    "x-small": {
+      "$value": "{24}",
+      "$description": "Extra small size — 24px",
+      "$extensions": { "caladan": { "figma-variable": "size/x-small" } }
+    },
+    "small": {
+      "$value": "{32}",
+      "$description": "Small size — 32px",
+      "$extensions": { "caladan": { "figma-variable": "size/small" } }
+    },
+    "medium": {
+      "$value": "{40}",
+      "$description": "Medium size — 40px",
+      "$extensions": { "caladan": { "figma-variable": "size/medium" } }
+    },
+    "large": {
+      "$value": "{48}",
+      "$description": "Large size — 48px",
+      "$extensions": { "caladan": { "figma-variable": "size/large" } }
+    },
+    "x-large": {
+      "$value": "{64}",
+      "$description": "Extra large size — 64px",
+      "$extensions": { "caladan": { "figma-variable": "size/x-large" } }
+    },
+    "2x-large": {
+      "$value": "{80}",
+      "$description": "2x large size — 80px",
+      "$extensions": { "caladan": { "figma-variable": "size/2x-large" } }
+    }
+  },
+  "screens": {
+    "mobile-small": {
+      "$value": "360px",
+      "$description": "Minimum small mobile viewport — 360px",
+      "$extensions": { "caladan": { "figma-variable": "screens/mobile-small" } }
+    },
+    "mobile-medium": {
+      "$value": "400px",
+      "$description": "Medium mobile viewport — 400px",
+      "$extensions": { "caladan": { "figma-variable": "screens/mobile-medium" } }
+    },
+    "mobile-large": {
+      "$value": "640px",
+      "$description": "Large mobile / small tablet viewport — 640px",
+      "$extensions": { "caladan": { "figma-variable": "screens/mobile-large" } }
+    },
+    "mobile-max": {
+      "$value": "768px",
+      "$description": "Maximum mobile viewport width — 768px",
+      "$extensions": { "caladan": { "figma-variable": "screens/mobile-max" } }
+    },
+    "desktop-small": {
+      "$value": "1024px",
+      "$description": "Minimum desktop viewport — 1024px",
+      "$extensions": { "caladan": { "figma-variable": "screens/desktop-small" } }
+    },
+    "desktop-medium": {
+      "$value": "1280px",
+      "$description": "Medium desktop viewport — 1280px",
+      "$extensions": { "caladan": { "figma-variable": "screens/desktop-medium" } }
+    },
+    "desktop-large": {
+      "$value": "1440px",
+      "$description": "Maximum desktop viewport — 1440px",
+      "$extensions": { "caladan": { "figma-variable": "screens/desktop-large" } }
+    }
+  }
+}

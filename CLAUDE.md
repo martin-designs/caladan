@@ -17,7 +17,8 @@ A design system built in Figma with a structured token pipeline to web, React, a
 |---|---|---|
 | Colors - Primitives | `VariableCollectionId:35:367` | `35:0` (colors-All) |
 | Colors - Alias | `VariableCollectionId:364:1234` | `364:0` (Light), `422:0` (Dark) |
-| Spacing | `VariableCollectionId:12:558` | — |
+| Spacing - Primitives | `VariableCollectionId:12:558` | `12:1` (All) |
+| Spacing - Alias | `VariableCollectionId:426:2159` | `426:1` (All) |
 | Typography | `VariableCollectionId:13:267` | — |
 
 ---
@@ -58,15 +59,37 @@ Key conventions:
 
 ---
 
+## Spacing system
+
+4px base unit. Tailwind-compatible.
+
+### Primitives (Spacing - Primitives)
+35 variables named by pixel value (e.g. `16` not `s16`). Complete Tailwind scale:
+`0, 1, 2, 4, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 56, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 384`
+
+### Aliases (Spacing - Alias)
+69 variables across: `border/`, `corner-radius/`, `gap/`, `padding/`, `icon-size/`, `breakpoints/`.
+
+Key conventions:
+- `border/`: s=1px, m=2px, l=4px
+- `corner-radius/`: component-s/m/l (4/8/16px), card-s/m/l (16/24/32px)
+- `icon-size/`: x-small=16px, small=20px, default=24px, large=32px, x-large=40px
+- `breakpoints/`: mobile-min=360px, mobile-max=1023px, desktop-min=1024px, desktop-max=1440px
+- `gap/` and `padding/` reference primitives directly (e.g. `{16}`)
+
+---
+
 ## Token files
 
 Located in `tokens/`. DTCG format (W3C Design Token Community Group).
 
-| File | Contents |
-|---|---|
-| `color-primitives.json` | OKLCH `$value`, hex + rgb + figma-variable in `$extensions.caladan` |
-| `color-aliases-light.json` | DTCG references (e.g. `{indigo.700}`), figma-variable in `$extensions.caladan` |
-| `color-aliases-dark.json` | Same structure, dark mode references |
+| File | `$type` | Contents |
+|---|---|---|
+| `color-primitives.json` | color | OKLCH `$value`, hex + rgb + figma-variable in `$extensions.caladan` |
+| `color-aliases-light.json` | color | DTCG references (e.g. `{indigo.700}`), figma-variable in `$extensions.caladan` |
+| `color-aliases-dark.json` | color | Same structure, dark mode references |
+| `spacing-primitives.json` | dimension | px `$value` (e.g. `"16px"`), figma-variable in `$extensions.caladan` |
+| `spacing-aliases.json` | dimension | DTCG references (e.g. `{16}`), figma-variable in `$extensions.caladan` |
 
 `$type: "color"` set at root level (inherited by all tokens). `$metadata` block at root with version, generated_at, source, figma_file.
 
@@ -89,6 +112,7 @@ The `scripts/export-color-tokens.js` and `.github/workflows/sync-color-tokens.ym
 | Script | Purpose |
 |---|---|
 | `npm run export-color-tokens` | Export color tokens (requires FIGMA_TOKEN env var + Enterprise) |
+| `npm run export-spacing-tokens` | Export spacing tokens (requires FIGMA_TOKEN env var + Enterprise) |
 | `npm run optimize-icons` | Run SVGO on `icons/svg/` |
 | `npm run build-react-icons` | Build React icon components |
 | `npm run build-react-native-icons` | Build React Native icon components |
@@ -105,6 +129,7 @@ All workflows use `workflow_dispatch` (manual trigger). `FIGMA_TOKEN` secret is 
 | `sync-react-icons.yml` | Export SVG + build React icon components |
 | `sync-react-native-icons.yml` | Export SVG + build React Native icon components |
 | `sync-color-tokens.yml` | Export color tokens (requires Enterprise Figma plan) |
+| `sync-spacing-tokens.yml` | Export spacing tokens (requires Enterprise Figma plan) |
 
 ---
 

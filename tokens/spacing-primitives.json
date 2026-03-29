@@ -1,0 +1,184 @@
+{
+  "$metadata": {
+    "version": "1.0.0",
+    "generated_at": "2026-03-29T10:38:59.927Z",
+    "source": "Figma · Spacing - Primitives · VariableCollectionId:12:558",
+    "figma_file": "oWyNqsZJKJYF8SpZsBPb9P"
+  },
+  "$type": "dimension",
+  "0": {
+    "$value": "0px",
+    "$description": "0px — Tailwind spacing 0",
+    "$extensions": { "caladan": { "figma-variable": "0" } }
+  },
+  "1": {
+    "$value": "1px",
+    "$description": "1px — Tailwind spacing px",
+    "$extensions": { "caladan": { "figma-variable": "1" } }
+  },
+  "2": {
+    "$value": "2px",
+    "$description": "2px — Tailwind spacing 0.5",
+    "$extensions": { "caladan": { "figma-variable": "2" } }
+  },
+  "4": {
+    "$value": "4px",
+    "$description": "4px — Tailwind spacing 1",
+    "$extensions": { "caladan": { "figma-variable": "4" } }
+  },
+  "6": {
+    "$value": "6px",
+    "$description": "6px — Tailwind spacing 1.5",
+    "$extensions": { "caladan": { "figma-variable": "6" } }
+  },
+  "8": {
+    "$value": "8px",
+    "$description": "8px — Tailwind spacing 2",
+    "$extensions": { "caladan": { "figma-variable": "8" } }
+  },
+  "10": {
+    "$value": "10px",
+    "$description": "10px — Tailwind spacing 2.5",
+    "$extensions": { "caladan": { "figma-variable": "10" } }
+  },
+  "12": {
+    "$value": "12px",
+    "$description": "12px — Tailwind spacing 3",
+    "$extensions": { "caladan": { "figma-variable": "12" } }
+  },
+  "14": {
+    "$value": "14px",
+    "$description": "14px — Tailwind spacing 3.5",
+    "$extensions": { "caladan": { "figma-variable": "14" } }
+  },
+  "16": {
+    "$value": "16px",
+    "$description": "16px — Tailwind spacing 4",
+    "$extensions": { "caladan": { "figma-variable": "16" } }
+  },
+  "20": {
+    "$value": "20px",
+    "$description": "20px — Tailwind spacing 5",
+    "$extensions": { "caladan": { "figma-variable": "20" } }
+  },
+  "24": {
+    "$value": "24px",
+    "$description": "24px — Tailwind spacing 6",
+    "$extensions": { "caladan": { "figma-variable": "24" } }
+  },
+  "28": {
+    "$value": "28px",
+    "$description": "28px — Tailwind spacing 7",
+    "$extensions": { "caladan": { "figma-variable": "28" } }
+  },
+  "32": {
+    "$value": "32px",
+    "$description": "32px — Tailwind spacing 8",
+    "$extensions": { "caladan": { "figma-variable": "32" } }
+  },
+  "36": {
+    "$value": "36px",
+    "$description": "36px — Tailwind spacing 9",
+    "$extensions": { "caladan": { "figma-variable": "36" } }
+  },
+  "40": {
+    "$value": "40px",
+    "$description": "40px — Tailwind spacing 10",
+    "$extensions": { "caladan": { "figma-variable": "40" } }
+  },
+  "44": {
+    "$value": "44px",
+    "$description": "44px — Tailwind spacing 11",
+    "$extensions": { "caladan": { "figma-variable": "44" } }
+  },
+  "48": {
+    "$value": "48px",
+    "$description": "48px — Tailwind spacing 12",
+    "$extensions": { "caladan": { "figma-variable": "48" } }
+  },
+  "56": {
+    "$value": "56px",
+    "$description": "56px — Tailwind spacing 14",
+    "$extensions": { "caladan": { "figma-variable": "56" } }
+  },
+  "64": {
+    "$value": "64px",
+    "$description": "64px — Tailwind spacing 16",
+    "$extensions": { "caladan": { "figma-variable": "64" } }
+  },
+  "80": {
+    "$value": "80px",
+    "$description": "80px — Tailwind spacing 20",
+    "$extensions": { "caladan": { "figma-variable": "80" } }
+  },
+  "96": {
+    "$value": "96px",
+    "$description": "96px — Tailwind spacing 24",
+    "$extensions": { "caladan": { "figma-variable": "96" } }
+  },
+  "112": {
+    "$value": "112px",
+    "$description": "112px — Tailwind spacing 28",
+    "$extensions": { "caladan": { "figma-variable": "112" } }
+  },
+  "128": {
+    "$value": "128px",
+    "$description": "128px — Tailwind spacing 32",
+    "$extensions": { "caladan": { "figma-variable": "128" } }
+  },
+  "144": {
+    "$value": "144px",
+    "$description": "144px — Tailwind spacing 36",
+    "$extensions": { "caladan": { "figma-variable": "144" } }
+  },
+  "160": {
+    "$value": "160px",
+    "$description": "160px — Tailwind spacing 40",
+    "$extensions": { "caladan": { "figma-variable": "160" } }
+  },
+  "176": {
+    "$value": "176px",
+    "$description": "176px — Tailwind spacing 44",
+    "$extensions": { "caladan": { "figma-variable": "176" } }
+  },
+  "192": {
+    "$value": "192px",
+    "$description": "192px — Tailwind spacing 48",
+    "$extensions": { "caladan": { "figma-variable": "192" } }
+  },
+  "208": {
+    "$value": "208px",
+    "$description": "208px — Tailwind spacing 52",
+    "$extensions": { "caladan": { "figma-variable": "208" } }
+  },
+  "224": {
+    "$value": "224px",
+    "$description": "224px — Tailwind spacing 56",
+    "$extensions": { "caladan": { "figma-variable": "224" } }
+  },
+  "240": {
+    "$value": "240px",
+    "$description": "240px — Tailwind spacing 60",
+    "$extensions": { "caladan": { "figma-variable": "240" } }
+  },
+  "256": {
+    "$value": "256px",
+    "$description": "256px — Tailwind spacing 64",
+    "$extensions": { "caladan": { "figma-variable": "256" } }
+  },
+  "288": {
+    "$value": "288px",
+    "$description": "288px — Tailwind spacing 72",
+    "$extensions": { "caladan": { "figma-variable": "288" } }
+  },
+  "320": {
+    "$value": "320px",
+    "$description": "320px — Tailwind spacing 80",
+    "$extensions": { "caladan": { "figma-variable": "320" } }
+  },
+  "384": {
+    "$value": "384px",
+    "$description": "384px — Tailwind spacing 96",
+    "$extensions": { "caladan": { "figma-variable": "384" } }
+  }
+}
