@@ -197,20 +197,24 @@ async function main() {
 
   console.log(`\nDone! Downloaded ${downloaded}, skipped ${skipped} unchanged.`);
 
-  // Delete SVGs that were removed from Figma
+  // Delete any SVG files on disk not present in the current Figma icon set
   const newKeys = new Set(newIcons.map((i) => `${i.category}/${i.name}`));
 
-  for (const icon of oldManifestMap.values()) {
-    if (!newKeys.has(`${icon.category}/${icon.name}`)) {
-      const svgPath = path.join(OUTPUT_DIR, icon.category, `${icon.name}.svg`);
-      if (fs.existsSync(svgPath)) {
-        fs.unlinkSync(svgPath);
-        console.log(`  ✗ removed ${icon.category}/${icon.name}.svg`);
+  if (fs.existsSync(OUTPUT_DIR)) {
+    for (const category of fs.readdirSync(OUTPUT_DIR)) {
+      const catDir = path.join(OUTPUT_DIR, category);
+      if (!fs.statSync(catDir).isDirectory()) continue;
+      for (const file of fs.readdirSync(catDir)) {
+        if (!file.endsWith('.svg')) continue;
+        const iconName = path.basename(file, '.svg');
+        if (!newKeys.has(`${category}/${iconName}`)) {
+          fs.unlinkSync(path.join(catDir, file));
+          console.log(`  ✗ removed ${category}/${iconName}.svg`);
+        }
       }
-      const catDir = path.join(OUTPUT_DIR, icon.category);
-      if (fs.existsSync(catDir) && fs.readdirSync(catDir).length === 0) {
+      if (fs.readdirSync(catDir).length === 0) {
         fs.rmdirSync(catDir);
-        console.log(`  ✗ removed empty category ${icon.category}/`);
+        console.log(`  ✗ removed empty category ${category}/`);
       }
     }
   }

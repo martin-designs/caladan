@@ -1,0 +1,50 @@
+name: Icons - Sync All (Figma → SVG + React + React Native)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  sync-all-icons:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Export icons from Figma
+        run: node scripts/export-icons.js
+        env:
+          FIGMA_TOKEN: ${{ secrets.FIGMA_TOKEN }}
+          FIGMA_FILE_KEY: oWyNqsZJKJYF8SpZsBPb9P
+          FIGMA_ICONS_NODE_ID: "106:728"
+
+      - name: Optimize SVGs
+        run: npm run optimize-icons
+
+      - name: Build React components
+        run: npm run build-react-icons
+
+      - name: Build React Native components
+        run: npm run build-react-native-icons
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add icons/svg/ icons/react/ icons/react-native/ icons/manifest.json
+          git diff --staged --quiet || git commit -m "chore: sync all icon outputs from Figma"
+          git push
