@@ -1,4 +1,4 @@
-name: Icons - Sync All (Figma → SVG + React + React Native)
+name: Icons - Sync All (Figma Sync)
 
 on:
   workflow_dispatch:
