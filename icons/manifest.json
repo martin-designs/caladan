@@ -1,0 +1,815 @@
+{
+  "generated_at": "2026-04-21T13:39:51.302Z",
+  "icons": [
+    {
+      "category": "navbar",
+      "name": "account-notification-fill",
+      "node_id": "563:37",
+      "updated_at": "2026-04-17T13:30:55.129Z"
+    },
+    {
+      "category": "navbar",
+      "name": "shopping-cart-fill",
+      "node_id": "562:23",
+      "updated_at": "2026-04-06T15:46:02.754Z"
+    },
+    {
+      "category": "actions",
+      "name": "attach",
+      "node_id": "176:553",
+      "updated_at": "2026-03-31T10:29:34.280Z"
+    },
+    {
+      "category": "navbar",
+      "name": "social",
+      "node_id": "176:635",
+      "updated_at": "2026-04-06T15:48:39.094Z"
+    },
+    {
+      "category": "navbar",
+      "name": "store",
+      "node_id": "236:10",
+      "updated_at": "2026-04-06T15:48:39.087Z"
+    },
+    {
+      "category": "categories",
+      "name": "fashion",
+      "node_id": "170:1257",
+      "updated_at": "2026-03-31T10:29:34.220Z"
+    },
+    {
+      "category": "information",
+      "name": "coin-oobyte",
+      "node_id": "166:605",
+      "updated_at": "2026-03-31T10:29:34.843Z"
+    },
+    {
+      "category": "information",
+      "name": "checkmark",
+      "node_id": "123:1076",
+      "updated_at": "2026-03-31T10:29:34.617Z"
+    },
+    {
+      "category": "categories",
+      "name": "woman",
+      "node_id": "170:1316",
+      "updated_at": "2026-03-31T10:29:34.881Z"
+    },
+    {
+      "category": "logo",
+      "name": "whatsapp_fill",
+      "node_id": "559:5",
+      "updated_at": "2026-04-06T15:46:02.770Z"
+    },
+    {
+      "category": "information",
+      "name": "cashback",
+      "node_id": "176:576",
+      "updated_at": "2026-03-31T10:29:34.318Z"
+    },
+    {
+      "category": "navigation",
+      "name": "arrow-line-up",
+      "node_id": "199:455",
+      "updated_at": "2026-03-31T10:29:34.302Z"
+    },
+    {
+      "category": "actions",
+      "name": "share",
+      "node_id": "122:488",
+      "updated_at": "2026-03-31T10:29:34.228Z"
+    },
+    {
+      "category": "actions",
+      "name": "user-follow",
+      "node_id": "122:630",
+      "updated_at": "2026-03-31T10:29:34.602Z"
+    },
+    {
+      "category": "actions",
+      "name": "user-group",
+      "node_id": "127:518",
+      "updated_at": "2026-03-31T10:29:34.330Z"
+    },
+    {
+      "category": "information",
+      "name": "ai-chat",
+      "node_id": "176:567",
+      "updated_at": "2026-03-31T10:29:34.586Z"
+    },
+    {
+      "category": "actions",
+      "name": "exit",
+      "node_id": "121:1493",
+      "updated_at": "2026-03-31T10:29:34.336Z"
+    },
+    {
+      "category": "actions",
+      "name": "chat",
+      "node_id": "121:878",
+      "updated_at": "2026-03-31T10:29:34.591Z"
+    },
+    {
+      "category": "navigation",
+      "name": "arrow-line-left",
+      "node_id": "199:498",
+      "updated_at": "2026-03-31T10:29:34.527Z"
+    },
+    {
+      "category": "information",
+      "name": "notification-alert-fill",
+      "node_id": "123:979",
+      "updated_at": "2026-03-31T10:29:34.628Z"
+    },
+    {
+      "category": "information",
+      "name": "coin-euro",
+      "node_id": "125:1255",
+      "updated_at": "2026-03-31T10:29:34.675Z"
+    },
+    {
+      "category": "actions",
+      "name": "view",
+      "node_id": "121:1515",
+      "updated_at": "2026-03-31T10:29:34.664Z"
+    },
+    {
+      "category": "categories",
+      "name": "beauty-care",
+      "node_id": "170:1251",
+      "updated_at": "2026-03-31T10:29:37.457Z"
+    },
+    {
+      "category": "actions",
+      "name": "remove",
+      "node_id": "121:1453",
+      "updated_at": "2026-03-31T10:29:37.495Z"
+    },
+    {
+      "category": "information",
+      "name": "ai",
+      "node_id": "176:565",
+      "updated_at": "2026-03-31T10:29:34.759Z"
+    },
+    {
+      "category": "navbar",
+      "name": "task",
+      "node_id": "536:8",
+      "updated_at": "2026-04-03T13:35:18.723Z"
+    },
+    {
+      "category": "information",
+      "name": "coin-coin",
+      "node_id": "128:1159",
+      "updated_at": "2026-03-31T10:29:37.513Z"
+    },
+    {
+      "category": "navbar",
+      "name": "task-filled",
+      "node_id": "536:7",
+      "updated_at": "2026-04-06T15:46:02.749Z"
+    },
+    {
+      "category": "logo",
+      "name": "linkedin-fill",
+      "node_id": "121:1150",
+      "updated_at": "2026-03-31T10:29:34.452Z"
+    },
+    {
+      "category": "actions",
+      "name": "user-edit",
+      "node_id": "126:459",
+      "updated_at": "2026-03-31T10:29:34.483Z"
+    },
+    {
+      "category": "actions",
+      "name": "photo",
+      "node_id": "121:1218",
+      "updated_at": "2026-03-31T10:29:34.487Z"
+    },
+    {
+      "category": "information",
+      "name": "notifications-disabled",
+      "node_id": "127:502",
+      "updated_at": "2026-03-31T10:29:34.516Z"
+    },
+    {
+      "category": "information",
+      "name": "rating-full",
+      "node_id": "121:1397",
+      "updated_at": "2026-03-31T10:29:34.544Z"
+    },
+    {
+      "category": "categories",
+      "name": "tech",
+      "node_id": "170:1275",
+      "updated_at": "2026-03-31T10:29:34.712Z"
+    },
+    {
+      "category": "actions",
+      "name": "user-add",
+      "node_id": "122:614",
+      "updated_at": "2026-03-31T10:29:34.564Z"
+    },
+    {
+      "category": "navbar",
+      "name": "social-fill",
+      "node_id": "122:598",
+      "updated_at": "2026-03-31T10:29:34.773Z"
+    },
+    {
+      "category": "actions",
+      "name": "add",
+      "node_id": "121:1408",
+      "updated_at": "2026-03-31T10:29:34.863Z"
+    },
+    {
+      "category": "information",
+      "name": "rating-half",
+      "node_id": "121:1396",
+      "updated_at": "2026-03-31T10:29:34.789Z"
+    },
+    {
+      "category": "actions",
+      "name": "send",
+      "node_id": "121:909",
+      "updated_at": "2026-03-31T10:29:34.779Z"
+    },
+    {
+      "category": "logo",
+      "name": "tiktok-fill",
+      "node_id": "121:1153",
+      "updated_at": "2026-03-31T10:29:34.875Z"
+    },
+    {
+      "category": "navigation",
+      "name": "arrow-line-down",
+      "node_id": "199:474",
+      "updated_at": "2026-03-31T10:29:34.393Z"
+    },
+    {
+      "category": "information",
+      "name": "discount",
+      "node_id": "125:1107",
+      "updated_at": "2026-03-31T10:29:34.539Z"
+    },
+    {
+      "category": "navigation",
+      "name": "arrow-line-right",
+      "node_id": "199:501",
+      "updated_at": "2026-03-31T10:29:37.482Z"
+    },
+    {
+      "category": "information",
+      "name": "discount-fill",
+      "node_id": "125:1205",
+      "updated_at": "2026-03-31T10:29:34.607Z"
+    },
+    {
+      "category": "actions",
+      "name": "play",
+      "node_id": "121:1256",
+      "updated_at": "2026-03-31T10:29:34.706Z"
+    },
+    {
+      "category": "actions",
+      "name": "liked",
+      "node_id": "125:475",
+      "updated_at": "2026-03-31T10:29:34.769Z"
+    },
+    {
+      "category": "information",
+      "name": "returns",
+      "node_id": "127:475",
+      "updated_at": "2026-03-31T10:29:34.670Z"
+    },
+    {
+      "category": "information",
+      "name": "support",
+      "node_id": "127:542",
+      "updated_at": "2026-03-31T10:29:37.491Z"
+    },
+    {
+      "category": "information",
+      "name": "membership",
+      "node_id": "127:485",
+      "updated_at": "2026-04-01T07:14:47.095Z"
+    },
+    {
+      "category": "logo",
+      "name": "telegram-fill",
+      "node_id": "121:1154",
+      "updated_at": "2026-03-31T10:29:34.831Z"
+    },
+    {
+      "category": "information",
+      "name": "shop-profile",
+      "node_id": "325:18",
+      "updated_at": "2026-03-31T10:29:34.288Z"
+    },
+    {
+      "category": "information",
+      "name": "verified-fill",
+      "node_id": "123:1027",
+      "updated_at": "2026-03-31T10:29:34.852Z"
+    },
+    {
+      "category": "actions",
+      "name": "delete",
+      "node_id": "121:1473",
+      "updated_at": "2026-03-31T10:29:34.492Z"
+    },
+    {
+      "category": "logo",
+      "name": "facebook-fill",
+      "node_id": "121:1152",
+      "updated_at": "2026-03-31T10:29:34.470Z"
+    },
+    {
+      "category": "information",
+      "name": "lock",
+      "node_id": "121:1580",
+      "updated_at": "2026-03-31T10:29:34.522Z"
+    },
+    {
+      "category": "information",
+      "name": "notification-success-fill",
+      "node_id": "123:1059",
+      "updated_at": "2026-03-31T10:29:34.211Z"
+    },
+    {
+      "category": "coin",
+      "name": "cash-withdraw",
+      "node_id": "147:473",
+      "updated_at": "2026-03-31T07:24:42.376Z"
+    },
+    {
+      "category": "information",
+      "name": "notification-alert",
+      "node_id": "123:959",
+      "updated_at": "2026-03-31T10:29:34.274Z"
+    },
+    {
+      "category": "information",
+      "name": "image",
+      "node_id": "123:995",
+      "updated_at": "2026-03-31T10:29:37.500Z"
+    },
+    {
+      "category": "navigation",
+      "name": "dashboard",
+      "node_id": "176:579",
+      "updated_at": "2026-03-31T10:29:34.702Z"
+    },
+    {
+      "category": "information",
+      "name": "language",
+      "node_id": "125:1065",
+      "updated_at": "2026-03-31T10:29:34.784Z"
+    },
+    {
+      "category": "information",
+      "name": "rating-empty",
+      "node_id": "121:1395",
+      "updated_at": "2026-03-31T10:29:34.742Z"
+    },
+    {
+      "category": "logo",
+      "name": "google-fill",
+      "node_id": "127:1119",
+      "updated_at": "2026-03-31T10:29:34.725Z"
+    },
+    {
+      "category": "navigation",
+      "name": "menu-categories",
+      "node_id": "166:473",
+      "updated_at": "2026-03-31T10:29:34.747Z"
+    },
+    {
+      "category": "navigation",
+      "name": "arrow-chevron-up",
+      "node_id": "121:806",
+      "updated_at": "2026-03-31T10:29:37.445Z"
+    },
+    {
+      "category": "actions",
+      "name": "repeat",
+      "node_id": "121:1413",
+      "updated_at": "2026-03-31T10:29:34.313Z"
+    },
+    {
+      "category": "information",
+      "name": "notifications",
+      "node_id": "125:1140",
+      "updated_at": "2026-03-31T10:29:34.365Z"
+    },
+    {
+      "category": "information",
+      "name": "bag",
+      "node_id": "125:1204",
+      "updated_at": "2026-03-31T10:29:34.359Z"
+    },
+    {
+      "category": "actions",
+      "name": "scan",
+      "node_id": "123:1127",
+      "updated_at": "2026-03-31T10:29:34.388Z"
+    },
+    {
+      "category": "information",
+      "name": "safety",
+      "node_id": "125:1206",
+      "updated_at": "2026-03-31T10:29:34.233Z"
+    },
+    {
+      "category": "information",
+      "name": "notification-success",
+      "node_id": "123:1058",
+      "updated_at": "2026-03-31T10:29:34.401Z"
+    },
+    {
+      "category": "information",
+      "name": "notification-question",
+      "node_id": "121:1616",
+      "updated_at": "2026-03-31T10:29:34.407Z"
+    },
+    {
+      "category": "actions",
+      "name": "link",
+      "node_id": "121:1013",
+      "updated_at": "2026-03-31T10:29:34.412Z"
+    },
+    {
+      "category": "information",
+      "name": "settings",
+      "node_id": "122:462",
+      "updated_at": "2026-03-31T10:29:34.612Z"
+    },
+    {
+      "category": "actions",
+      "name": "like",
+      "node_id": "125:474",
+      "updated_at": "2026-03-31T10:29:34.436Z"
+    },
+    {
+      "category": "information",
+      "name": "time",
+      "node_id": "122:520",
+      "updated_at": "2026-03-31T10:29:34.654Z"
+    },
+    {
+      "category": "coin",
+      "name": "cash-inapp",
+      "node_id": "147:471",
+      "updated_at": "2026-03-31T07:24:42.500Z"
+    },
+    {
+      "category": "coin",
+      "name": "coin",
+      "node_id": "127:1040",
+      "updated_at": "2026-03-31T07:24:42.706Z"
+    },
+    {
+      "category": "information",
+      "name": "cart",
+      "node_id": "407:12",
+      "updated_at": "2026-04-21T12:36:42.241Z"
+    },
+    {
+      "category": "information",
+      "name": "rows",
+      "node_id": "544:1161",
+      "updated_at": "2026-04-21T12:36:42.248Z"
+    },
+    {
+      "category": "actions",
+      "name": "circle-contract",
+      "node_id": "127:1074",
+      "updated_at": "2026-04-21T12:36:42.253Z"
+    },
+    {
+      "category": "actions",
+      "name": "circle-close",
+      "node_id": "505:299",
+      "updated_at": "2026-04-21T12:36:42.273Z"
+    },
+    {
+      "category": "information",
+      "name": "grid",
+      "node_id": "544:1160",
+      "updated_at": "2026-04-21T12:36:42.289Z"
+    },
+    {
+      "category": "information",
+      "name": "security",
+      "node_id": "216:16",
+      "updated_at": "2026-04-21T12:36:42.260Z"
+    },
+    {
+      "category": "navigation",
+      "name": "menu-hamburger",
+      "node_id": "125:1280",
+      "updated_at": "2026-03-31T10:29:34.795Z"
+    },
+    {
+      "category": "actions",
+      "name": "dispute",
+      "node_id": "485:1129",
+      "updated_at": "2026-04-21T12:36:42.295Z"
+    },
+    {
+      "category": "actions",
+      "name": "audio",
+      "node_id": "121:1228",
+      "updated_at": "2026-03-31T10:29:34.858Z"
+    },
+    {
+      "category": "actions",
+      "name": "edit",
+      "node_id": "121:934",
+      "updated_at": "2026-03-31T10:29:34.295Z"
+    },
+    {
+      "category": "navigation",
+      "name": "home-fill",
+      "node_id": "125:1188",
+      "updated_at": "2026-03-31T10:29:37.475Z"
+    },
+    {
+      "category": "actions",
+      "name": "copy",
+      "node_id": "121:979",
+      "updated_at": "2026-03-31T10:29:37.487Z"
+    },
+    {
+      "category": "actions",
+      "name": "circle-expand",
+      "node_id": "127:1075",
+      "updated_at": "2026-04-21T12:36:42.266Z"
+    },
+    {
+      "category": "information",
+      "name": "bank-card",
+      "node_id": "125:1017",
+      "updated_at": "2026-03-31T10:29:34.569Z"
+    },
+    {
+      "category": "actions",
+      "name": "volume-off",
+      "node_id": "121:1322",
+      "updated_at": "2026-03-31T10:29:34.696Z"
+    },
+    {
+      "category": "actions",
+      "name": "volume",
+      "node_id": "121:1308",
+      "updated_at": "2026-03-31T10:29:34.597Z"
+    },
+    {
+      "category": "actions",
+      "name": "refresh",
+      "node_id": "122:506",
+      "updated_at": "2026-03-31T10:29:37.509Z"
+    },
+    {
+      "category": "navigation",
+      "name": "arrow-chevron-down",
+      "node_id": "121:807",
+      "updated_at": "2026-03-31T10:29:34.753Z"
+    },
+    {
+      "category": "categories",
+      "name": "home-diy",
+      "node_id": "170:1269",
+      "updated_at": "2026-03-31T10:29:34.497Z"
+    },
+    {
+      "category": "navbar",
+      "name": "account",
+      "node_id": "176:642",
+      "updated_at": "2026-04-02T08:49:12.251Z"
+    },
+    {
+      "category": "logo",
+      "name": "instagram-fill",
+      "node_id": "121:1151",
+      "updated_at": "2026-03-31T10:29:34.352Z"
+    },
+    {
+      "category": "information",
+      "name": "notification-warning",
+      "node_id": "122:536",
+      "updated_at": "2026-03-31T10:29:34.247Z"
+    },
+    {
+      "category": "actions",
+      "name": "user-remove",
+      "node_id": "123:1111",
+      "updated_at": "2026-03-31T10:29:34.370Z"
+    },
+    {
+      "category": "categories",
+      "name": "game-play",
+      "node_id": "170:1263",
+      "updated_at": "2026-03-31T10:29:34.375Z"
+    },
+    {
+      "category": "actions",
+      "name": "close",
+      "node_id": "121:1463",
+      "updated_at": "2026-03-31T10:29:34.346Z"
+    },
+    {
+      "category": "navigation",
+      "name": "arrow-chevron-right",
+      "node_id": "121:809",
+      "updated_at": "2026-03-31T10:29:34.430Z"
+    },
+    {
+      "category": "information",
+      "name": "delivery",
+      "node_id": "122:556",
+      "updated_at": "2026-03-31T10:29:34.442Z"
+    },
+    {
+      "category": "information",
+      "name": "wallet",
+      "node_id": "176:570",
+      "updated_at": "2026-03-31T10:29:34.504Z"
+    },
+    {
+      "category": "navigation",
+      "name": "ellipsis-vertical",
+      "node_id": "121:1600",
+      "updated_at": "2026-03-31T10:29:37.470Z"
+    },
+    {
+      "category": "information",
+      "name": "withdraw",
+      "node_id": "125:1049",
+      "updated_at": "2026-03-31T10:29:34.549Z"
+    },
+    {
+      "category": "information",
+      "name": "tasks",
+      "node_id": "127:680",
+      "updated_at": "2026-03-31T10:29:34.533Z"
+    },
+    {
+      "category": "information",
+      "name": "rate",
+      "node_id": "127:566",
+      "updated_at": "2026-04-21T12:36:42.280Z"
+    },
+    {
+      "category": "actions",
+      "name": "hide",
+      "node_id": "121:1525",
+      "updated_at": "2026-03-31T10:29:34.634Z"
+    },
+    {
+      "category": "logo",
+      "name": "x-fill",
+      "node_id": "121:1155",
+      "updated_at": "2026-03-31T10:29:34.241Z"
+    },
+    {
+      "category": "information",
+      "name": "qrcode",
+      "node_id": "123:1159",
+      "updated_at": "2026-03-31T10:29:34.659Z"
+    },
+    {
+      "category": "categories",
+      "name": "man",
+      "node_id": "170:1318",
+      "updated_at": "2026-03-31T10:29:34.764Z"
+    },
+    {
+      "category": "navigation",
+      "name": "arrow-chevron-left",
+      "node_id": "121:808",
+      "updated_at": "2026-03-31T10:29:34.887Z"
+    },
+    {
+      "category": "information",
+      "name": "notification-info",
+      "node_id": "121:1570",
+      "updated_at": "2026-03-31T10:29:34.820Z"
+    },
+    {
+      "category": "navigation",
+      "name": "home",
+      "node_id": "125:1172",
+      "updated_at": "2026-03-31T10:29:34.459Z"
+    },
+    {
+      "category": "coin",
+      "name": "cash",
+      "node_id": "127:1041",
+      "updated_at": "2026-03-31T07:24:41.974Z"
+    },
+    {
+      "category": "information",
+      "name": "calendar",
+      "node_id": "387:17",
+      "updated_at": "2026-03-31T10:29:34.417Z"
+    },
+    {
+      "category": "information",
+      "name": "location",
+      "node_id": "121:1204",
+      "updated_at": "2026-03-31T10:29:34.815Z"
+    },
+    {
+      "category": "navigation",
+      "name": "ellipsis-horizontal",
+      "node_id": "121:1599",
+      "updated_at": "2026-03-31T10:29:34.690Z"
+    },
+    {
+      "category": "categories",
+      "name": "home-living",
+      "node_id": "176:590",
+      "updated_at": "2026-03-31T10:29:34.382Z"
+    },
+    {
+      "category": "navigation",
+      "name": "arrow-line-left-down",
+      "node_id": "592:1146",
+      "updated_at": "2026-04-08T13:55:19.676Z"
+    },
+    {
+      "category": "navbar",
+      "name": "store-fill",
+      "node_id": "121:1340",
+      "updated_at": "2026-04-06T15:50:06.227Z"
+    },
+    {
+      "category": "navbar",
+      "name": "account-fill",
+      "node_id": "122:587",
+      "updated_at": "2026-03-31T10:29:34.837Z"
+    },
+    {
+      "category": "information",
+      "name": "box",
+      "node_id": "125:977",
+      "updated_at": "2026-03-31T10:29:37.518Z"
+    },
+    {
+      "category": "actions",
+      "name": "filter",
+      "node_id": "121:1536",
+      "updated_at": "2026-03-31T10:29:37.452Z"
+    },
+    {
+      "category": "actions",
+      "name": "user",
+      "node_id": "123:1095",
+      "updated_at": "2026-03-31T10:29:37.504Z"
+    },
+    {
+      "category": "actions",
+      "name": "search",
+      "node_id": "121:1018",
+      "updated_at": "2026-03-31T10:29:34.716Z"
+    },
+    {
+      "category": "actions",
+      "name": "pause",
+      "node_id": "121:1266",
+      "updated_at": "2026-03-31T10:29:34.577Z"
+    },
+    {
+      "category": "logo",
+      "name": "apple-fill",
+      "node_id": "127:1109",
+      "updated_at": "2026-03-31T10:29:34.560Z"
+    },
+    {
+      "category": "information",
+      "name": "transfer vertical",
+      "node_id": "528:1123",
+      "updated_at": "2026-04-02T13:11:56.399Z"
+    },
+    {
+      "category": "information",
+      "name": "refund",
+      "node_id": "526:7",
+      "updated_at": "2026-04-02T13:11:56.390Z"
+    },
+    {
+      "category": "coin",
+      "name": "oobyte",
+      "node_id": "127:1037",
+      "updated_at": "2026-04-16T09:58:13.639Z"
+    },
+    {
+      "category": "navbar",
+      "name": "shopping-cart-with-item",
+      "node_id": "564:24",
+      "updated_at": "2026-04-17T13:30:46.022Z"
+    }
+  ]
+}
