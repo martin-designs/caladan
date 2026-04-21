@@ -1,10 +1,11 @@
 export { default as AccountFill } from './AccountFill';
+export { default as AccountNotificationFill } from './AccountNotificationFill';
 export { default as Account } from './Account';
-export { default as BagFill } from './BagFill';
-export { default as Bag } from './Bag';
+export { default as ShoppingCartFill } from './ShoppingCartFill';
+export { default as ShoppingCartWithItem } from './ShoppingCartWithItem';
 export { default as SocialFill } from './SocialFill';
 export { default as Social } from './Social';
 export { default as StoreFill } from './StoreFill';
 export { default as Store } from './Store';
-export { default as WalletFill } from './WalletFill';
-export { default as Wallet } from './Wallet';
+export { default as TaskFilled } from './TaskFilled';
+export { default as Task } from './Task';
