@@ -47,7 +47,7 @@ async function main() {
           typescript: true,
           template: ({ componentName, jsx }, { tpl }) => tpl`
             import * as React from 'react';
-            import Svg, { Path, G, ClipPath, Rect, Circle, Defs } from 'react-native-svg';
+            import Svg, { Path, G, ClipPath, Rect, Circle, Ellipse, Line, Polyline, Polygon, LinearGradient, RadialGradient, Stop, Defs, Mask, Use, Symbol, Text, TSpan } from 'react-native-svg';
 
             interface Props {
               size?: number;
@@ -65,7 +65,7 @@ async function main() {
       );
 
       // Replace currentColor with the color prop
-      const finalCode = jsxCode.replace(/currentColor/g, '{color}');
+      const finalCode = jsxCode.replace(/"currentColor"/g, '{color}');
 
       const outputFile = path.join(rnCategoryDir, `${componentName}.tsx`);
       fs.writeFileSync(outputFile, finalCode);

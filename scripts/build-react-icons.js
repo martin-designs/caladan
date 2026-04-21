@@ -25,8 +25,6 @@ async function main() {
     fs.statSync(path.join(SVG_DIR, f)).isDirectory()
   );
 
-  const allExports = [];
-
   for (const category of categories) {
     const categoryDir = path.join(SVG_DIR, category);
     const reactCategoryDir = path.join(REACT_DIR, category);

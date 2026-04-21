@@ -6,25 +6,40 @@ const FIGMA_TOKEN = process.env.FIGMA_TOKEN;
 const FIGMA_FILE_KEY = process.env.FIGMA_FILE_KEY;
 const FIGMA_ICONS_NODE_ID = process.env.FIGMA_ICONS_NODE_ID;
 const OUTPUT_DIR = path.join(__dirname, '..', 'icons', 'svg');
+const MANIFEST_PATH = path.join(__dirname, '..', 'icons', 'manifest.json');
 
-// Fetch JSON from a URL
+for (const [name, value] of [
+  ['FIGMA_TOKEN', FIGMA_TOKEN],
+  ['FIGMA_FILE_KEY', FIGMA_FILE_KEY],
+  ['FIGMA_ICONS_NODE_ID', FIGMA_ICONS_NODE_ID],
+]) {
+  if (!value) {
+    console.error(`Missing required environment variable: ${name}`);
+    process.exit(1);
+  }
+}
+
 function fetch(url, headers) {
   return new Promise((resolve, reject) => {
     https.get(url, { headers }, (res) => {
       let data = '';
       res.on('data', (chunk) => (data += chunk));
-      res.on('end', () => resolve(JSON.parse(data)));
+      res.on('end', () => {
+        if (res.statusCode < 200 || res.statusCode >= 300) {
+          reject(new Error(`HTTP ${res.statusCode} from Figma API: ${data}`));
+          return;
+        }
+        resolve(JSON.parse(data));
+      });
       res.on('error', reject);
     });
   });
 }
 
-// Download a file from a URL and save it
 function download(url, dest) {
   return new Promise((resolve, reject) => {
     const file = fs.createWriteStream(dest);
     https.get(url, (res) => {
-      // Follow redirects
       if (res.statusCode === 301 || res.statusCode === 302) {
         file.close();
         download(res.headers.location, dest).then(resolve).catch(reject);
@@ -33,7 +48,7 @@ function download(url, dest) {
       res.pipe(file);
       file.on('finish', () => file.close(resolve));
       file.on('error', reject);
-    });
+    }).on('error', reject);
   });
 }
 
@@ -46,11 +61,17 @@ function parseName(componentName) {
   return { category: 'Other', name: parts[parts.length - 1].trim() };
 }
 
-// Check if a node ID falls within the icons frame
-// Figma node IDs are in the format "106:728" — we fetch the icons frame's
-// children and only export components whose node_id is in that list
+async function withConcurrency(tasks, limit = 10) {
+  let i = 0;
+  async function worker() {
+    while (i < tasks.length) {
+      await tasks[i++]();
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, tasks.length) }, worker));
+}
+
 async function getNodeIdsInFrame(frameNodeId) {
-  // Normalize node ID format (replace - with :)
   const normalizedId = frameNodeId.replace('-', ':');
   console.log(`Fetching children of icons frame (node ${normalizedId})...`);
 
@@ -64,7 +85,6 @@ async function getNodeIdsInFrame(frameNodeId) {
     throw new Error(`Could not find node ${normalizedId} in file`);
   }
 
-  // Recursively collect all node IDs within this frame
   const ids = new Set();
   function collect(n) {
     ids.add(n.document.id);
@@ -97,10 +117,10 @@ async function main() {
   const allComponents = file.meta?.components || [];
   console.log(`Total components in file: ${allComponents.length}`);
 
-  // Step 3 — filter to only components inside the icons frame
-  const components = allComponents.filter((c) =>
-    frameNodeIds.has(c.node_id)
-  );
+  // Step 3 — filter to icons frame and parse names once
+  const components = allComponents
+    .filter((c) => frameNodeIds.has(c.node_id))
+    .map((c) => ({ ...c, parsed: parseName(c.name) }));
   console.log(`Components inside icons frame: ${components.length}`);
 
   if (components.length === 0) {
@@ -108,43 +128,95 @@ async function main() {
     process.exit(1);
   }
 
-  // Print categories found
-  const categories = [...new Set(components.map((c) => parseName(c.name).category))];
-  console.log('Categories:', categories.join(', '));
+  const categoryNames = [...new Set(components.map((c) => c.parsed.category))];
+  console.log('Categories:', categoryNames.join(', '));
 
-  // Step 4 — request SVG export URLs
-  const nodeIds = components.map((c) => c.node_id).join(',');
-  console.log('Requesting SVG export URLs from Figma...');
-  const images = await fetch(
-    `https://api.figma.com/v1/images/${FIGMA_FILE_KEY}?ids=${nodeIds}&format=svg`,
-    { 'X-Figma-Token': FIGMA_TOKEN }
-  );
+  // Step 4 — load existing manifest to detect unchanged icons
+  const oldManifestMap = new Map();
+  if (fs.existsSync(MANIFEST_PATH)) {
+    const oldManifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
+    for (const icon of oldManifest.icons) {
+      oldManifestMap.set(icon.node_id, icon);
+    }
+  }
 
-  const urls = images.images || {};
+  // Split into icons that need downloading vs unchanged
+  const toDownload = [];
+  const newIcons = [];
 
-  // Step 5 — download each SVG
-  let downloaded = 0;
   for (const component of components) {
-    const { category, name: iconName } = parseName(component.name);
+    const { category, name: iconName } = component.parsed;
+    const existing = oldManifestMap.get(component.node_id);
+    if (existing && existing.updated_at === component.updated_at) {
+      newIcons.push({ category, name: iconName, node_id: component.node_id, updated_at: component.updated_at });
+    } else {
+      toDownload.push(component);
+    }
+  }
+
+  const skipped = newIcons.length;
+  console.log(`Unchanged: ${skipped}, to download: ${toDownload.length}`);
+
+  // Step 5 — request SVG export URLs only for icons that need downloading
+  const urls = {};
+  if (toDownload.length > 0) {
+    console.log('Requesting SVG export URLs from Figma...');
+    const CHUNK_SIZE = 100;
+    for (let i = 0; i < toDownload.length; i += CHUNK_SIZE) {
+      const chunk = toDownload.slice(i, i + CHUNK_SIZE);
+      const nodeIds = chunk.map((c) => c.node_id).join(',');
+      const images = await fetch(
+        `https://api.figma.com/v1/images/${FIGMA_FILE_KEY}?ids=${nodeIds}&format=svg`,
+        { 'X-Figma-Token': FIGMA_TOKEN }
+      );
+      Object.assign(urls, images.images || {});
+    }
+  }
+
+  // Step 6 — download new/updated SVGs in parallel
+  let downloaded = 0;
+
+  const tasks = toDownload.map((component) => async () => {
+    const { category, name: iconName } = component.parsed;
     const url = urls[component.node_id];
     if (!url) {
       console.warn(`  No URL for ${component.name}`);
-      continue;
+      return;
     }
 
-    // Create category folder if needed
-    const categoryDir = path.join(OUTPUT_DIR, category);
-    if (!fs.existsSync(categoryDir)) {
-      fs.mkdirSync(categoryDir, { recursive: true });
-    }
+    fs.mkdirSync(path.join(OUTPUT_DIR, category), { recursive: true });
 
-    const dest = path.join(categoryDir, `${iconName}.svg`);
+    const dest = path.join(OUTPUT_DIR, category, `${iconName}.svg`);
     await download(url, dest);
     downloaded++;
+    newIcons.push({ category, name: iconName, node_id: component.node_id, updated_at: component.updated_at });
     console.log(`  ✓ ${category}/${iconName}.svg`);
+  });
+
+  await withConcurrency(tasks, 10);
+
+  console.log(`\nDone! Downloaded ${downloaded}, skipped ${skipped} unchanged.`);
+
+  // Delete SVGs that were removed from Figma
+  const newKeys = new Set(newIcons.map((i) => `${i.category}/${i.name}`));
+
+  for (const icon of oldManifestMap.values()) {
+    if (!newKeys.has(`${icon.category}/${icon.name}`)) {
+      const svgPath = path.join(OUTPUT_DIR, icon.category, `${icon.name}.svg`);
+      if (fs.existsSync(svgPath)) {
+        fs.unlinkSync(svgPath);
+        console.log(`  ✗ removed ${icon.category}/${icon.name}.svg`);
+      }
+      const catDir = path.join(OUTPUT_DIR, icon.category);
+      if (fs.existsSync(catDir) && fs.readdirSync(catDir).length === 0) {
+        fs.rmdirSync(catDir);
+        console.log(`  ✗ removed empty category ${icon.category}/`);
+      }
+    }
   }
 
-  console.log(`\nDone! Downloaded ${downloaded} icons.`);
+  // Write updated manifest (only icons that were successfully downloaded or unchanged)
+  fs.writeFileSync(MANIFEST_PATH, JSON.stringify({ generated_at: new Date().toISOString(), icons: newIcons }, null, 2));
 }
 
 main().catch((err) => {
