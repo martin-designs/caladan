@@ -1,8 +1,8 @@
 # Caladan Token System
 
-The current version of this repo was built over a 3-day weekend for a Senior / Staff Product Designer job application for X-Bow. The idea had been brewing for a while: a token pipeline where Figma is a genuine source of truth rather than a handoff tool, with automated export, platform-agnostic output, and a practical workaround for the Figma Enterprise API limitation that most product designers quietly hit and work around manually.
+Caladan is a design token pipeline that makes Figma the genuine source of truth and automates export across web, React, and React Native without a manual step in the middle. Built to solve a real infrastructure problem where design tokens exist in Figma but never make it into code. 
 
-Caladan is a design token pipeline built in Figma with structured export to web, React, and React Native. Covers color (OKLCH), spacing (4px grid), and typography (Major Third scale), each with a primitive and semantic alias layer that produces production-ready CSS and JavaScript output.
+The pipeline covers color (OKLCH), spacing (4px grid), and typography (Major Third scale), each with a primitive and semantic alias layer that produces production-ready CSS and JavaScript output. A practical workaround for the Figma Enterprise API limitation means Figma stays the source of truth without a plan upgrade.
 
 ---
 
